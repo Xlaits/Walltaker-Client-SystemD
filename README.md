@@ -7,13 +7,13 @@ A SystemD service for running Walltaker.
 3. A wallpaper setting program compatable with `wal`, such as `feh`
 
 ## Basic Setup
-1. clone and configure [Plush Pawrest's/JBerliner's Walltaker Client found here.](https://gitlab.com/JBerliner/walltaker-client) It is hosted on gitlab.
+1. clone and configure [Plush Pawrest's/JBerliner's Walltaker Client, found here.](https://gitlab.com/JBerliner/walltaker-client) It is hosted on gitlab.
 2. Install `wal`, sometimes called `pywall` or `python-pywal` in your package manager.
 3. clone this repo.
 4. Edit `walltaker.service`
-     1. Change `ExecStart=` from `/usr/bin/bash /home/xlaits/git/walltaker-client/walltaker.sh 1>/dev/null 2>/dev/null` to `/usr/bin/bash /path/to/your/walltaker.sh 1>/dev/null 2>/dev/null`
+     1. Change `ExecStart=` from `/usr/bin/bash /home/username/path/to/walltaker.sh 1>/dev/null 2>/dev/null` to point to walltaker.sh in `walltaker-client`.
      2. If you want to have the service:
-        1. Reset your wallpaper to a specified one: change `ExecStopPost=` to point to the same place on your system as I have it set for mine.
+        1. Reset your wallpaper to a specified one: change `ExecStopPost=`'s `username` to your username.
         2. Not touch your wallpaper: Comment out or delete the `ExecStopPost=` line.
 5. Edit `walltaker_reset.sh`
     1. If you are using `wal` and want your wallpaper reset: Edit the location of the image in the command to point to the one you wish.

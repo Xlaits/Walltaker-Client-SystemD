@@ -1,0 +1,14 @@
+[Unit]
+Description=SystemD Daemon for JBerliner's Walltaker.sh or Walltaker-Client
+#After=
+#Before=
+
+[Service]
+ExecStart=/usr/bin/bash /home/xlaits/git/walltaker-client/walltaker.sh 1>/dev/null 2>/dev/null
+#ExecReload=
+Type=Simple
+Restart=no
+ExecStopPost=/usr/bin/bash /home/xlaits/.config/systemd/user/walltaker_reset.sh 1>/dev/null 2>/dev/null
+
+[Install]
+WantedBy=default.target
